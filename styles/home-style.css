@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+    font-family: 'JetBrains Mono';  
+}
+
+
+/* Barra de Navegação */
+.navbar-container{
+    height: 100px;
+    width: 100%;
+    background-color: #261616;
+    position: fixed;
+}
+
+
+
+/* Hero */
+.hero-container{
+    width: 100%;
+    height: 764px;
+    background-image: url("/images/pexels-pixabay-38519\ 1.png");
+    background-position-x: -10px;
+    object-fit: cover;
+}
+
+.hero-content{
+    display: flex;
+    width: 970px;
+    margin-left: 9vw;
+    padding-top: 180px;
+    color: white;
+}
+
+.hero-content hr{
+    width: 7px;
+    height: 333px;
+    border: none;
+    background-color: white;
+    margin: 0;
+}
+
+.hero-text-buttons{
+    margin-left: 16px;
+}
+
+.hero-content h1{
+    font-size: 58px;
+    width: 767px;
+    margin: 0;
+}
+
+.hero-buttons button{
+    margin-top: 16px;
+    font-size: 32px;
+    border-radius: 13px;
+    border: none;
+    font-weight: bold;
+}
+
+.hero-button-solucoes{
+    width: 248px;
+    height: 80px;
+    color: white;
+    background-color: #A3AB98;
+    box-shadow: 0px 12px #83887c, 0px 20px 15px #000000;
+}
+
+.hero-button-contato{
+    width: 353px;
+    height: 80px;
+    color: #5A3938;
+    box-shadow: 0px 12px #DFC5C5, 0px 20px 15px #000000;
+}
+
+
+/* Serviços */
+.servicos-container{
+    width: 1017px;
+    height: 281px;
+    border-radius: 85px;
+    background-color: #473232;
+}
+
+.servicos-content{
+    display: flex;
+    justify-content: space-between;
+    width: 790px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 60px;
+}
+
+.servico{
+    display: flex;
+    
+}
+
+.servico-texts{
+    color: white;
+    width: 288px;
+}
+
+.servico-texts h2{
+    margin: 0;
+}
+
+.servico img{
+    width: 84px;
+    height: 84px;
+    margin-top: auto;
+    margin-bottom: auto;
+} 
+
+.servico hr{
+    width: 2px;
+    height: 158px;
+    background-color: white;
+    border: none;
+    margin: 0px 10px;
+}
