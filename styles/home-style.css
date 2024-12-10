@@ -20,6 +20,7 @@ body{
     height: 764px;
     background-image: url("/images/pexels-pixabay-38519\ 1.png");
     background-position-x: -10px;
+    background-size: 110%;
     object-fit: cover;
 }
 
@@ -27,7 +28,7 @@ body{
     display: flex;
     width: 970px;
     margin-left: 9vw;
-    padding-top: 180px;
+    padding-top: 210px;
     color: white;
 }
 
@@ -73,12 +74,22 @@ body{
 }
 
 
+
+
 /* Serviços */
 .servicos-container{
+    width: 100%;
+    position: relative;
+    top: -130px;
+}
+
+.servicos-content-container{
     width: 1017px;
     height: 281px;
     border-radius: 85px;
     background-color: #473232;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .servicos-content{
@@ -88,6 +99,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     padding-top: 60px;
+    margin-left: auto;
 }
 
 .servico{
