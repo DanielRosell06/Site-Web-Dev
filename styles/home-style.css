@@ -10,6 +10,7 @@ body{
     width: 100%;
     background-color: #261616;
     position: fixed;
+    z-index: 10000;
 }
 
 
@@ -129,4 +130,79 @@ body{
     background-color: white;
     border: none;
     margin: 0px 10px;
+}
+
+
+
+
+
+/* UNICAMP */
+
+.unicamp-container{
+    width: 100%;
+}
+
+.unicamp-content{
+    width: 1052px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.unicamp-texts{
+    width:600px;
+}
+.unicamp-texts h2{
+    font-size: 32px;
+}   
+.unicamp-texts p{
+    text-align: justify;
+    font-size: 20px;
+}
+
+
+
+
+/* PORQUE NOS ESCOLHER*/
+.porque-container{
+    background-color: #F6F3F3;
+    width: 100%;
+    margin-top: 130px;
+}
+
+.porque-content{
+    width: 1052px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+}
+
+.porque-texts{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.porque-titulo{
+    width: 100%;
+    text-align: center;
+}
+
+.porque-titulo h1{
+    font-size: 40px;
+}
+
+.porque-motivo h2{
+    font-size: 24px;
+}
+
+.porque-motivo p{
+    font-size: 20px;
+    text-align: justify;
+    
+}
+
+.porque-motivo{
+    width: 300px;
 }
