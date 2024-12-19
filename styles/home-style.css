@@ -65,6 +65,7 @@ body{
     color: white;
     background-color: #A3AB98;
     box-shadow: 0px 12px #83887c, 0px 20px 15px #000000;
+    cursor: pointer;
 }
 
 .hero-button-contato{
@@ -72,6 +73,7 @@ body{
     height: 80px;
     color: #5A3938;
     box-shadow: 0px 12px #DFC5C5, 0px 20px 15px #000000;
+    cursor: pointer;
 }
 
 
@@ -169,6 +171,7 @@ body{
     background-color: #F6F3F3;
     width: 100%;
     margin-top: 130px;
+    padding-bottom: 70px;
 }
 
 .porque-content{
@@ -205,4 +208,158 @@ body{
 
 .porque-motivo{
     width: 300px;
+}
+
+
+
+/* Seção de Soluções */
+
+.solucoes-container{
+    width: 100%;
+    background-color: #EFE5E5;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.solucoes-content{
+    width: 874px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.solucoes-titulo{
+    text-align: center;
+}
+
+.solucoes-titulo h1{
+    font-size: 40px;
+}
+
+.solucoes-solucao{
+    height: 397px;
+    width: 358px;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 40px;
+    box-shadow: 0px 15px 10px -2px #b8b8b8;
+}
+
+.solucoes-texts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.onepage{
+    background-color: #D2D5AF;
+}
+
+.corporativo{
+    background-color: #A3AB98;
+}
+
+.completo{
+    background-color: #847B6D;
+}
+
+.sistema{
+    background-color: #67584D;
+}
+
+.div-solucoes-button{
+    width: 100%;
+    display: flex;
+}
+
+.solucoes-button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 0px #cccccc;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+
+
+/* Seção de Repertorio */
+.repertorio-container{
+    width: 100%;
+    padding-top: 40px;
+}
+
+.repertorio-content{
+    width: 1052px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.repertorio-titulo h1{
+    font-size: 40px;
+}
+
+.repertorio{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.repertorio-left-content{
+    width: 500px;
+    text-align: justify;
+    padding-left: 20px;
+}
+
+.repertorio-left-content h2{
+    margin-top: 0;
+    font-size: 32px;
+    text-align: start;
+}
+
+.repertorio-link{
+    font-weight: 600;
+}
+
+.first-imagem-repertorio{
+    display: none;
+}
+
+.first-imagem-repertorio-ativo{
+    display: block;
+    width: 458px;
+    height: 235px;
+}
+
+.repertorio-first-slide-control{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.repertorio-first-slide-control button{
+    background-color: #A3AB98;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.first-slide-pointer{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #D2D5AF;
+    margin-top: 12.5px;
+}
+
+.first-slide-pointer-ativo{
+    background-color: #A3AB98;
 }
