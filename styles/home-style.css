@@ -6,9 +6,9 @@ body{
 
 /* Barra de Navegação */
 .navbar-container{
-    height: 100px;
+    height: 70px;
     width: 100%;
-    background-color: #261616;
+    background-color: #473232;
     position: fixed;
     z-index: 10000;
 }
@@ -28,8 +28,9 @@ body{
 .hero-content{
     display: flex;
     width: 970px;
-    margin-left: 9vw;
-    padding-top: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 180px;
     color: white;
 }
 
@@ -59,14 +60,22 @@ body{
     font-weight: bold;
 }
 
-.hero-button-solucoes{
+.hero-button-solucoes {
     width: 248px;
     height: 80px;
     color: white;
     background-color: #A3AB98;
     box-shadow: 0px 12px #83887c, 0px 20px 15px #000000;
     cursor: pointer;
+    transition: all ease 0.3s;
+    border: none;
 }
+
+.hero-button-solucoes:active {
+    transform: translateY(12px);
+    box-shadow: 0px 0px #83887c, 0px 8px 8px #000000;
+}
+
 
 .hero-button-contato{
     width: 353px;
@@ -74,6 +83,12 @@ body{
     color: #5A3938;
     box-shadow: 0px 12px #DFC5C5, 0px 20px 15px #000000;
     cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.hero-button-contato:active {
+    transform: translateY(12px);
+    box-shadow: 0px 0px #83887c, 0px 8px 8px #000000;
 }
 
 
@@ -83,7 +98,7 @@ body{
 .servicos-container{
     width: 100%;
     position: relative;
-    top: -130px;
+    top: -150px;
 }
 
 .servicos-content-container{
@@ -271,6 +286,7 @@ body{
     display: flex;
 }
 
+
 .solucoes-button{
     padding: 10px;
     border: none;
@@ -282,8 +298,13 @@ body{
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
+    transition: all ease 0.5s;
 }
 
+.solucoes-button:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px #cccccc;
+}
 
 
 /* Seção de Repertorio */
