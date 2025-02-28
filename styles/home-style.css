@@ -276,7 +276,7 @@ a {
     width: 325px;
     height: 70px;
     color: var(--dark-color);
-    background-color: var(--primary-color);
+    background-color: var(--white);
     box-shadow: 0px 8px #DFC5C5, 0px 14px 15px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: all ease 0.3s;
@@ -343,10 +343,6 @@ a {
     transition: all 0.4s ease;
 }
 
-.servico:first-child .servico-icon {
-    color: var(--secondary-color);
-}
-
 .servico:hover .servico-icon {
     transform: translateY(-10px);
 }
@@ -367,10 +363,6 @@ a {
     height: 3px;
     background-color: var(--accent-color);
     transition: all 0.3s ease;
-}
-
-.servico:first-child .servico-texts h2::after {
-    background-color: var(--secondary-color);
 }
 
 .servico:hover .servico-texts h2::after {
@@ -532,7 +524,7 @@ a {
 }
 
 .solucoes-content {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 0 20px;
 }
