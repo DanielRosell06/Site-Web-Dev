@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,34 +9,72 @@
     <link rel="stylesheet" type="text/css" href="styles/home-style.css">
 
     <!-- Scripts -->
-     <script src="scripts/repertorio-slide.js" defer></script>
+    <script src="scripts/repertorio-slide.js" defer></script>
 
-    <!-- Font -->
-    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Titulo -->
-    <title>Document</title>
-</head>
-<body>
+    <title>NextSize - Soluções Web Profissionais</title>
 
-    
+    <!-- Meta tags para SEO -->
+    <meta name="description"
+        content="NextSize - Soluções web personalizadas com qualidade e inovação para seu negócio.">
+    <meta name="keywords" content="desenvolvimento web, design web, sites, UNICAMP, sistemas">
+</head>
+
+<body>
     <!-- Barra de Navegação -->
-    <header class="navbar-container">
+    <header id="cabecalho" class="navbar-container">
         <div class="navbar-content">
-            
+            <div class="logo-container">
+                <h1>NextSize</h1>
+            </div>
+            <nav class="navbar-text">
+                <a href="#" class="nav-link active">
+                    <h2 class="navbar-now">Home</h2>
+                </a>
+                <a href="#repertorio-section" class="nav-link">
+                    <h2>Repertório</h2>
+                </a>
+                <a href="#servicos-section" class="nav-link">
+                    <h2>Serviços</h2>
+                </a>
+            </nav>
+        </div>
+
+        <div class="navbar__contato">
+            <button class="navbar-botao"><i class="fas fa-envelope"></i> Fale Conosco</button>
+            <div class="navbar-box">
+                <div class="navbar-box-idioma">
+                </div>
+                <div class="navbar-box-seta">
+                </div>
+            </div>
         </div>
     </header>
-    
+
 
     <!-- Hero -->
     <section class="hero-container">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <hr class="bara">
             <div class="hero-text-buttons">
                 <h1>Soluções web personalizadas com Qualidade e Inovação</h1>
                 <div class="hero-buttons">
-                    <a href="#"><button class="hero-button-contato">Entre em contato</button></a>
-                    <a href="#"><button class="hero-button-solucoes">Soluções</button></a>
+                    <a href="#contato-section"><button class="hero-button-contato"><i class="fas fa-comment"></i> Entre
+                            em contato</button></a>
+                    <a href="#solucoes-section"><button class="hero-button-solucoes"><i class="fas fa-desktop"></i>
+                            Soluções</button></a>
                 </div>
             </div>
         </div>
@@ -43,170 +82,350 @@
 
 
     <!-- Seção de serviços -->
-     <section class="servicos-container">
+    <section id="servicos-section" class="servicos-container">
         <div class="servicos-content-container">
             <div class="servicos-content">
                 <div class="servico servico-design">
-                    <img src="images/icone-design-web.png">
+                    <div class="servico-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
                     <hr>
                     <div class="servico-texts">
                         <h2>Design Web</h2>
-                        <p>Fazemos o design para o seu site, contando com serviço personalizado e comunicação constante para a sua satisfação.</p>
+                        <p>Fazemos o design para o seu site, contando com serviço personalizado e comunicação constante
+                            para a sua satisfação.</p>
                     </div>
                 </div>
                 <div class="servico servico-desenvolvimento">
-                    <img src="images/icone-desenvolvimento-web.png">
+                    <div class="servico-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
                     <hr>
                     <div class="servico-texts">
                         <h2>Desenvolvimento Web</h2>
-                        <p>Fazemos o código e auxiliamos na publicação do seu site de forma clara. Nosso objetivo é trazer visibilidade com qualidade ao nosso cliente</p>
+                        <p>Fazemos o código e auxiliamos na publicação do seu site de forma clara. Nosso objetivo é
+                            trazer visibilidade com qualidade ao nosso cliente.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </section>
 
 
     <!-- Seção da unicamp -->
-     <section class="unicamp-container">
+    <section class="unicamp-container">
         <div class="unicamp-content">
             <div class="unicamp-texts">
-                <h2>Temos profissonais da UNICAMP!</h2>
-                <p>Temos profissionais que atualmente cursam sistemas de informação na Universidade Estadual de Campinas, que buscam construir uma boa experiencia na área da tecnologia, sempre em busca da melhora e desenvolvimento profissional.</p>
+                <h2><i class="fas fa-graduation-cap"></i> Temos profissionais da UNICAMP!</h2>
+                <p>Nosso time inclui profissionais que atualmente cursam Sistemas de Informação na Universidade Estadual
+                    de
+                    Campinas, que buscam construir uma boa experiência na área da tecnologia, sempre em busca da melhora
+                    e desenvolvimento profissional.</p>
+                <a href="#sobre-nos" class="btn-unicamp-saiba-mais">Saiba mais sobre nós</a>
             </div>
             <div class="unicamp-image">
-                <img src="/images/unicamp-image.png">
+                <img src="/images/unicamp-image.png" alt="Universidade Estadual de Campinas - UNICAMP">
             </div>
-
         </div>
-     </section>
+    </section>
 
 
-     <!--Seção de porque nos escolher-->
-     <section class="porque-container">
+    <!--Seção de porque nos escolher-->
+    <section id="sobre-nos" class="porque-container">
         <div class="porque-content">
             <div class="porque-titulo">
-                <h1>Porque nos escolher?</h1>
+                <h1>Por que nos escolher?</h1>
+                <div class="section-divider"></div>
             </div>
             <div class="porque-texts">
                 <div class="porque-motivo">
+                    <div class="porque-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
                     <h2>Competência</h2>
-                    <p>Temos profissionais cursantes de Sistemas de Informação em uma das maiores universidades da América Latina, a UNICAMP, que buscam construir maior experiencia e evoluir na área de tecnologia. </p>
+                    <p>Temos profissionais cursantes de Sistemas de Informação em uma das maiores universidades da
+                        América Latina, a UNICAMP, que buscam construir maior experiência e evoluir na área de
+                        tecnologia.</p>
                 </div>
                 <div class="porque-motivo">
+                    <div class="porque-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
                     <h2>Acessibilidade</h2>
-                    <p>Nossos preços são baixos comparados ao mercado, e negociáveis. Entre em contato com a gente para entrarmos em um acordo justo com relação ao preço</p>
+                    <p>Nossos preços são competitivos comparados ao mercado, e negociáveis. Entre em contato com a gente
+                        para
+                        entrarmos em um acordo justo com relação ao preço.</p>
                 </div>
                 <div class="porque-motivo">
+                    <div class="porque-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
                     <h2>Experiência</h2>
-                    <p>Nossos profissionais possuem grande experiência na área de design e desenvolvimento web. O que trás segurança à quem quiser contratar o nosso serviço.</p>
+                    <p>Nossos profissionais possuem grande experiência na área de design e desenvolvimento web. O que
+                        traz segurança a quem quiser contratar o nosso serviço.</p>
                 </div>
             </div>
         </div>
-     </section>
+    </section>
 
 
-     <!-- Seção de Soluções -->
-        <section class="solucoes-container">
-            <div class="solucoes-content">
-                <div class="solucoes-titulo">
-                    <h1>Nossas Soluções</h1>
+    <!-- Seção de Soluções -->
+    <section id="solucoes-section" class="solucoes-container">
+        <div class="solucoes-content">
+            <div class="solucoes-titulo">
+                <h1>Nossas Soluções</h1>
+                <div class="section-divider"></div>
+            </div>
+            <div class="solucoes-texts">
+                <div class="solucoes-solucao onepage">
+                    <div class="solucao-tag">Básico</div>
+                    <h2>Site One-Page</h2>
+                    <p>Se você busca um site profissional, eficiente e de alta qualidade, nossa opção de site em uma
+                        única página é perfeita para você.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Design personalizado</li>
+                        <li><i class="fas fa-check-circle"></i> Desenvolvimento Profissional</li>
+                        <li><i class="fas fa-check-circle"></i> Site responsivo</li>
+                        <li><i class="fas fa-check-circle"></i> Carregamento Rápido</li>
+                        <li><i class="fas fa-check-circle"></i> 1 Página</li>
+                    </ul>
+                    <h3>R$2.000 - R$3.500</h3>
+                    <div class="div-solucoes-button">
+                        <a href="#contato-section"><button class="solucoes-button">Quero um Orçamento</button></a>
+                    </div>
                 </div>
-                <div class="solucoes-texts">
-                    <div class="solucoes-solucao onepage">
-                        <h2>Site One-Page</h2>
-                        <p>Se você busca um site profissional, eficiente e de alta qualidade, nossa opção de site em uma única página é perfeita para você.</p>
-                        <ul>
-                            <li>Design personalizado</li>
-                            <li>Desenvolvimento Profissional</li>
-                            <li>Site responsivo</li>
-                            <li>Carregamento Rápido</li>
-                            <li>1 Página</li>
-                        </ul>
-                        <h3>R$2.000 - R$3.500</h3>
-                        <div class="div-solucoes-button">
-                            <a href="#"><button class="solucoes-button">Quero um Orçamento</button></a>
-                        </div>
+                <div class="solucoes-solucao corporativo">
+                    <div class="solucao-tag">Popular</div>
+                    <h2>Site Corporativo</h2>
+                    <p>Se você busca um site corporativo, completo e profissional, nossa opção de site de até 5 páginas
+                        é ideal para representar sua empresa online.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Design personalizado</li>
+                        <li><i class="fas fa-check-circle"></i> Desenvolvimento Profissional</li>
+                        <li><i class="fas fa-check-circle"></i> Site responsivo</li>
+                        <li><i class="fas fa-check-circle"></i> Carregamento Rápido</li>
+                        <li><i class="fas fa-check-circle"></i> Até 5 Páginas</li>
+                    </ul>
+                    <h3>R$3.500 - R$5.000</h3>
+                    <div class="div-solucoes-button">
+                        <a href="#contato-section"><button class="solucoes-button">Quero um Orçamento</button></a>
                     </div>
-                    <div class="solucoes-solucao corporativo">
-                        <h2>Site Corporativo</h2>
-                        <p>Se você busca um site corporativo, completo e profissional, nossa opção de site de até 5 páginas é ideal para representar sua empresa online.</p>
-                        <ul>
-                            <li>Design personalizado</li>
-                            <li>Desenvolvimento Profissional</li>
-                            <li>Site responsivo</li>
-                            <li>Carregamento Rápido</li>
-                            <li>Até 5 Páginas</li>
-                        </ul>
-                        <h3>R$3.500 - R$5.000</h3>
-                        <div class="div-solucoes-button">
-                            <a href="#"><button class="solucoes-button">Quero um Orçamento</button></a>
-                        </div>
+                </div>
+                <div class="solucoes-solucao completo">
+                    <div class="solucao-tag">Completo</div>
+                    <h2>Site Completo</h2>
+                    <p>Se você busca um site profissional, robusto e de alta qualidade, nossa opção de site completo é a
+                        escolha ideal para você.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Design personalizado</li>
+                        <li><i class="fas fa-check-circle"></i> Desenvolvimento Profissional</li>
+                        <li><i class="fas fa-check-circle"></i> Site responsivo</li>
+                        <li><i class="fas fa-check-circle"></i> Carregamento Rápido</li>
+                        <li><i class="fas fa-check-circle"></i> Páginas de acordo com o necessário</li>
+                    </ul>
+                    <h3>R$5.000 - R$7.000</h3>
+                    <div class="div-solucoes-button">
+                        <a href="#contato-section"><button class="solucoes-button">Quero um Orçamento</button></a>
                     </div>
-                    <div class="solucoes-solucao completo">
-                        <h2>Site Completo</h2>
-                        <p>Se você busca um site profissional, robusto e de alta qualidade, nossa opção de site completo é a escolha ideal para você.</p>
-                        <ul>
-                            <li>Design personalizado</li>
-                            <li>Desenvolvimento Profissional</li>
-                            <li>Site responsivo</li>
-                            <li>Carregamento Rápido</li>
-                            <li>paginas de acordo com o necessario</li>
-                        </ul>
-                        <h3>R$3.500 - R$5.000</h3>
-                        <div class="div-solucoes-button">
-                            <a href="#"><button class="solucoes-button">Quero um Orçamento</button></a>
-                        </div>
-                    </div>
-                    <div class="solucoes-solucao sistema">
-                        <h2>Web sistema</h2>
-                        <p>Se você busca um sistema web profissional, eficiente e de alta qualidade, essa solução é ideal para você.</p>
-                        <ul>
-                            <li>Design personalizado</li>
-                            <li>Desenvolvimento Profissional</li>
-                            <li>Site responsivo</li>
-                            <li>Desempenho Otimizado</li>
-                            <li>Estrutura Sob Medida necessidades</li>
-                            <li>Frontend e Backend Integrados</li>
-                        </ul>
-                        <h3>R$7.000 - R$10.000</h3>
-                        <div class="div-solucoes-button">
-                            <a href="#"><button class="solucoes-button">Quero um Orçamento</button></a>
-                        </div>
+                </div>
+                <div class="solucoes-solucao sistema">
+                    <div class="solucao-tag">Premium</div>
+                    <h2>Web Sistema</h2>
+                    <p>Se você busca um sistema web profissional, eficiente e de alta qualidade, essa solução é ideal
+                        para você.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Design personalizado</li>
+                        <li><i class="fas fa-check-circle"></i> Desenvolvimento Profissional</li>
+                        <li><i class="fas fa-check-circle"></i> Sistema responsivo</li>
+                        <li><i class="fas fa-check-circle"></i> Desempenho Otimizado</li>
+                        <li><i class="fas fa-check-circle"></i> Estrutura Sob Medida</li>
+                        <li><i class="fas fa-check-circle"></i> Frontend e Backend Integrados</li>
+                    </ul>
+                    <h3>R$7.000 - R$10.000</h3>
+                    <div class="div-solucoes-button">
+                        <a href="#contato-section"><button class="solucoes-button">Quero um Orçamento</button></a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
-        <!-- Seção de Repertorio -->
-        <section class="repertorio-container">
-            <div class="repertorio-content">
-                <div class="repertorio-titulo">
-                    <h1>Nosso Repertório</h1>
-                </div>
-                <div class="repertorio">
-                    <div class="repertorio-left-content">
-                        <h2>Atual Soluções em Engenharia</h2>
-                        <p class="repertorio-descrissao">Desencolcimento de um site corporativo para a empresa Atual Soluções em Engenharia. Site com o objetivo de divulgar e vender serviços da empresa.</p>
-                        <p class="repertorio-link">Clique <a href="https://www.atualsolucoes.com.br/site/">Aqui</a> para ver o site</p>
+    <!-- Seção de Repertorio -->
+    <section id="repertorio-section" class="repertorio-container">
+        <div class="repertorio-content">
+            <div class="repertorio-titulo">
+                <h1>Nosso Repertório</h1>
+                <div class="section-divider"></div>
+            </div>
+            <div class="repertorio">
+                <div class="repertorio-left-content">
+                    <h2>Atual Soluções em Engenharia</h2>
+                    <p class="repertorio-descricao">Desenvolvimento de um site corporativo para a empresa Atual
+                        Soluções em Engenharia. Site com o objetivo de divulgar e vender serviços da empresa.</p>
+                    <div class="repertorio-features">
+                        <div class="repertorio-feature"><i class="fas fa-desktop"></i> Site Responsivo</div>
+                        <div class="repertorio-feature"><i class="fas fa-rocket"></i> Performance Otimizada</div>
+                        <div class="repertorio-feature"><i class="fas fa-search"></i> SEO Amigável</div>
                     </div>
-                    <div class="repertorio-right-content">
-                        <img src="/images/Atual-Solucoes-01.png" alt="Captura de Tela do Site Atual Soluções em Engenharia, https://www.atualsolucoes.com.br/site/" class="first-imagem-repertorio first-imagem-repertorio-ativo">
-                        <img src="/images/Atual-Solucoes-02.png" alt="Captura de Tela do Site Atual Soluções em Engenharia, https://www.atualsolucoes.com.br/site/" class="first-imagem-repertorio">
-                        <img src="/images/Atual-Solucoes-03.png" alt="Captura de Tela do Site Atual Soluções em Engenharia, https://www.atualsolucoes.com.br/site/" class="first-imagem-repertorio">
-                        <img src="/images/Atual-Solucoes-04.png" alt="Captura de Tela do Site Atual Soluções em Engenharia, https://www.atualsolucoes.com.br/site/" class="first-imagem-repertorio">
-                        <div class="repertorio-first-slide-control">
-                            <button class="first-slide-left-button"></button>
-                            <div class="first-slide-pointer first-slide-pointer-ativo"></div>
-                            <div class="first-slide-pointer"></div>
-                            <div class="first-slide-pointer"></div>
-                            <div class="first-slide-pointer"></div>
-                            <button class="first-slide-right-button"></button>
-                        </div>
+                    <p class="repertorio-link">Clique <a href="https://www.atualsolucoes.com.br/site/"
+                            target="_blank">Aqui</a> para ver
+                        o site</p>
+                </div>
+                <div class="repertorio-right-content">
+                    <div class="slide-container">
+                        <img src="/images/Atual-Solucoes-01.png"
+                            alt="Captura de Tela do Site Atual Soluções em Engenharia"
+                            class="first-imagem-repertorio first-imagem-repertorio-ativo">
+                        <img src="/images/Atual-Solucoes-02.png"
+                            alt="Captura de Tela do Site Atual Soluções em Engenharia" class="first-imagem-repertorio">
+                        <img src="/images/Atual-Solucoes-03.png"
+                            alt="Captura de Tela do Site Atual Soluções em Engenharia" class="first-imagem-repertorio">
+                        <img src="/images/Atual-Solucoes-04.png"
+                            alt="Captura de Tela do Site Atual Soluções em Engenharia" class="first-imagem-repertorio">
+                    </div>
+                    <div class="repertorio-first-slide-control">
+                        <button class="first-slide-left-button"><i class="fas fa-chevron-left"></i></button>
+                        <div class="first-slide-pointer first-slide-pointer-ativo"></div>
+                        <div class="first-slide-pointer"></div>
+                        <div class="first-slide-pointer"></div>
+                        <div class="first-slide-pointer"></div>
+                        <button class="first-slide-right-button"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato-section" class="contato-container">
+        <div class="contato-content">
+            <div class="contato-info">
+                <h2>Entre em Contato</h2>
+                <p>Estamos prontos para transformar sua ideia em realidade. Entre em contato para um orçamento
+                    personalizado.</p>
+                <div class="contato-metodos">
+                    <div class="contato-metodo">
+                        <i class="fas fa-envelope"></i>
+                        <p>contato@nextsize.com.br</p>
+                    </div>
+                    <div class="contato-metodo">
+                        <i class="fas fa-phone"></i>
+                        <p>(19) 99999-9999</p>
+                    </div>
+                    <div class="contato-metodo">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Campinas, SP</p>
+                    </div>
+                </div>
+                <div class="contato-social">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contato-form">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Seu email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone">
+                    </div>
+                    <div class="form-group">
+                        <label for="servico">Serviço de interesse</label>
+                        <select id="servico" name="servico">
+                            <option value="">Selecione um serviço</option>
+                            <option value="onepage">Site One-Page</option>
+                            <option value="corporativo">Site Corporativo</option>
+                            <option value="completo">Site Completo</option>
+                            <option value="sistema">Web Sistema</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Conte-nos sobre seu projeto"></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>NextSize</h2>
+                <p>Soluções web personalizadas com qualidade e inovação.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#servicos-section">Serviços</a></li>
+                    <li><a href="#solucoes-section">Soluções</a></li>
+                    <li><a href="#repertorio-section">Repertório</a></li>
+                    <li><a href="#sobre-nos">Sobre Nós</a></li>
+                    <li><a href="#contato-section">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-contato">
+                <h3>Contato</h3>
+                <p><i class="fas fa-envelope"></i> contato@nextsize.com.br</p>
+                <p><i class="fas fa-phone"></i> (19) 99999-9999</p>
+                <p><i class="fas fa-map-marker-alt"></i> Campinas, SP</p>
+            </div>
+            <div class="footer-social">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NextSize. Todos os direitos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp -->
+    <a href="https://wa.me/5519999999999" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Script adicional para funcionamento do botão Voltar ao Topo -->
+    <script>
+        // Botão voltar ao topo
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+    </script>
 </body>
+
 </html>
