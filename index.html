@@ -11,6 +11,7 @@
     <!-- Scripts -->
     <script src="scripts/repertorio-slide.js" defer></script>
     <script src="scripts/cabecalho.js" defer></script>
+    <script src="scripts/botao.js" defer></script>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
@@ -514,19 +515,8 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- Script adicional para funcionamento do botão Voltar ao Topo -->
-    <script>
-        // Botão voltar ao topo
-        const backToTopButton = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-    </script>
+   
+  
 </body>
 
 </html>
