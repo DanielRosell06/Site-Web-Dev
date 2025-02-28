@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+
+
 body{
     margin: 0;
     font-family: 'JetBrains Mono';  
@@ -6,40 +9,162 @@ body{
 
 /* Barra de Navegação */
 .navbar-container{
+
     height: 70px;
     width: 100%;
-    background-color: #473232;
     position: fixed;
     z-index: 10000;
+
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+    gap: 22%;
+
+    font-family: "Kurale", serif;
+    font-weight: normal;
+    color: white;
+    height: 11vh;
+
+}
+.mudar-fundo{
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
+
+.navbar-content{
+
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 50px;
+
+}
+
+.navbar-content h1{
+
+    font-size: 32px;
+    font-weight: normal;
+    color: #D2D5AF;
+    cursor: pointer;
+
+}
+
+.navbar-now{
+    text-decoration: underline;
+    text-underline-offset: 5px; /* Aumenta a distância do sublinhado */
+    text-decoration-thickness: 1px; /* Diminui a grossura do sublinhado */
+
+
+}
+
+.navbar-text{
+
+    display: flex;
+    flex-direction: row;
+    
+    gap: 35px;
+    font-size: 20px;
+    
+
+}
+.navbar-text h2{
+
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+
+.navbar__contato{
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.navbar-botao{
+
+    color: white;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: "Kurale", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 7px 27px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.navbar-box{
+
+    display:flex; 
+    flex-direction: row; 
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+
+}
+
+
+.navbar-box-idioma{
+
+    margin-top: 1%;
+    background-image: url(/images/idiomaBrasil.png);
+    width: 25px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.navbar-box-seta{
+
+    background-image: url(/images/seta.png);
+    width: 6px;
+    height: 5px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
 
 
 /* Hero */
 .hero-container{
+
     width: 100%;
     height: 764px;
-    background-image: url("/images/pexels-pixabay-38519\ 1.png");
+    background-image: url("/images/imgInicial.jpg");
     background-position-x: -10px;
     background-size: 110%;
     object-fit: cover;
+
 }
 
 .hero-content{
+
     display: flex;
-    width: 970px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 180px;
     color: white;
+
 }
 
 .hero-content hr{
+    
     width: 7px;
     height: 333px;
     border: none;
     background-color: white;
     margin: 0;
+
 }
 
 .hero-text-buttons{

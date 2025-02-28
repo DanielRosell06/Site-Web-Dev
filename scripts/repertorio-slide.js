@@ -32,3 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the first slide
     updateSlide(currentIndex);
 });
+
+
+
+window.addEventListener('scroll', function() {
+    const cabecalho = document.getElementById('cabecalho');
+    const alturaMudanca = 500; // Altura a partir da qual o fundo muda (em pixels)
+
+    if (window.scrollY > alturaMudanca) {
+        cabecalho.classList.add('mudar-fundo'); // Adiciona a classe
+    } else {
+        cabecalho.classList.remove('mudar-fundo'); // Remove a classe
+    }
+});
