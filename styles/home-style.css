@@ -10,21 +10,20 @@ body{
 /* Barra de Navegação */
 .navbar-container{
 
-    height: 70px;
     width: 100%;
     position: fixed;
     z-index: 10000;
 
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-around;
     gap: 22%;
 
     font-family: "Kurale", serif;
     font-weight: normal;
     color: white;
-    height: 11vh;
+    height: 12vh;
 
 }
 .mudar-fundo{
@@ -36,9 +35,8 @@ body{
 
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     gap: 50px;
-
 }
 
 .navbar-content h1{
@@ -139,15 +137,13 @@ body{
 
     width: 100%;
     height: 764px;
-    background-image: url("/images/imgInicial.jpg");
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/images/imgInicial.jpg");;
     background-position-x: -10px;
     background-size: 110%;
     object-fit: cover;
-
 }
 
 .hero-content{
-
     display: flex;
     width: 80%;
     margin-left: auto;
