@@ -78,11 +78,6 @@ a {
     text-shadow: 0 0 10px rgba(210, 213, 175, 0.5);
 }
 
-.navbar-now {
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 1px;
-}
 
 .navbar-text {
     display: flex;
@@ -164,7 +159,7 @@ a {
 
 .navbar-box-idioma {
     margin-top: 1%;
-    background-image: url(/images/idiomaBrasil.png);
+    background-image: url('/images/idiomaBrasil.png');
     width: 25px;
     height: 20px;
     background-size: cover;
@@ -173,7 +168,7 @@ a {
 }
 
 .navbar-box-seta {
-    background-image: url(/images/seta.png);
+    background-image: url('/images/seta.png');
     width: 6px;
     height: 5px;
     background-size: cover;
@@ -193,7 +188,7 @@ a {
 .hero-container {
     width: 100%;
     height: 764px;
-    background: url("/images/imgInicial.jpg");
+    background-image: url('/images/imgInicial.jpg');
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
