@@ -8,12 +8,32 @@ const path = require('path');
 // Configuração do Express
 const app = express();
 
+// Configurando CORS para receber somente entradas conhecidas
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Lista de origens permitidas
+    const allowedOrigins = [
+      'https://site-web-dev.onrender.com', // Produção
+      'http://localhost:5500',             // Live Server padrão
+      'http://localhost:3000',             // Frontend local
+      'http://127.0.0.1:5500'              // Alternativa local
+    ];
+
+    // Permite requests sem 'origin' (como mobile apps ou curl)
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Acesso bloqueado por política de CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
+
 // Segurança para produção
 app.use(helmet());
-app.use(cors({
-  origin: 'https://site-web-dev.onrender.com', // Restringe para seu domínio
-  methods: ['POST', 'GET'] // Métodos permitidos
-}));
+app.use(cors(corsOptions));
 
 // Configurações do Body Parser
 app.use(bodyParser.json());
