@@ -1,0 +1,356 @@
+/* Barra de Navegação */
+.navbar-container {
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 22%;
+    font-family: "Kurale", serif;
+    font-weight: normal;
+    color: white;
+    height: 12vh;
+    transition: var(--transition);
+}
+
+.mudar-fundo {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-content h1 {
+    font-size: 32px;
+    font-weight: normal;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.navbar-content h1:hover {
+    text-shadow: 0 0 10px rgba(210, 213, 175, 0.5);
+}
+
+
+.navbar-text {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    font-size: 20px;
+}
+
+.navbar-text h2 {
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.navbar-text h2:hover {
+    color: var(--primary-color);
+}
+
+.nav-link {
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.navbar__contato {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.navbar-botao {
+    color: white;
+    font-size: 20px;
+    background-color: rgba(210, 213, 175, 0.2);
+    font-family: "Kurale", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 7px 27px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.navbar-botao:hover {
+    background-color: rgba(210, 213, 175, 0.4);
+    transform: translateY(-2px);
+}
+
+.navbar-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.navbar-box:hover {
+    transform: translateY(-2px);
+}
+
+.navbar-box-idioma {
+    margin-top: 1%;
+    background-image: url('/images/idiomaBrasil.png');
+    width: 25px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navbar-box-seta {
+    background-image: url('/images/seta.png');
+    width: 6px;
+    height: 5px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Rodapé */
+.footer-container {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo {
+    width: 25%;
+}
+
+.footer-logo h2 {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-family: "Kurale", serif;
+    font-weight: normal;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: var(--light-color);
+}
+
+.footer-links {
+    width: 20%;
+}
+
+.footer-links h3 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: var(--light-color);
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-contato {
+    width: 25%;
+}
+
+.footer-contato h3 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.footer-contato p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--light-color);
+}
+
+.footer-contato p i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.footer-social {
+    width: 20%;
+}
+
+.footer-social h3 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social .social-icon {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-color);
+}
+
+.footer-social .social-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 20px 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom-links a {
+    font-size: 14px;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.footer-bottom-links a:hover {
+    color: var(--primary-color);
+}
+
+.social-icon {
+    background-color: var(--light-color);
+    color: var(--accent-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+
+
+/* Responsividade */
+
+@media (max-width: 992px) {
+    .navbar-container {
+        gap: 10%;
+    }
+
+    .footer-logo, 
+    .footer-links, 
+    .footer-contato, 
+    .footer-social {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+    
+    .navbar__contato {
+        margin-top: 15px;
+    }
+
+    .footer-logo, 
+    .footer-links, 
+    .footer-contato, 
+    .footer-social {
+        width: 100%;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

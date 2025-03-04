@@ -1,0 +1,210 @@
+:root {
+    --primary-color: #D2D5AF;
+    --secondary-color: #A3AB98;
+    --accent-color: #673232;
+    --dark-color: #473232;
+    --light-color: #F6F3F3;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+/* Reset e fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    scroll-behavior: smooth;
+    /* Espaço para o cabeçalho fixo */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Área Principal */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 0px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title h1 {
+    font-size: 36px;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    font-size: 18px;
+    color: var(--accent-color);
+}
+
+.highlight {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.coluna {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Cartões de conteúdo */
+.card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    border-top: 4px solid var(--accent-color);
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+/* Itens de Contato */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.info-icon {
+    background-color: var(--accent-color);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.info-text h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+/* Mapa */
+.map {
+    width: 100%;
+    height: 300px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Formulário */
+.formulario input,
+.formulario textarea,
+.formulario select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.botao {
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.botao:hover {
+    background: var(--dark-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-link {
+    background-color: var(--accent-color);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
