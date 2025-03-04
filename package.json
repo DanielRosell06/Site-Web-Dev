@@ -1,0 +1,30 @@
+{
+  "name": "site-dev-web",
+  "version": "1.0.0",
+  "description": "os arquivos em HTML de todas as páginas estão inteiros na pasta principal, enquanto, na mesma pasta, existem outras pastas:\r - styles: Contém os arquivos CSS\r - scripts: Contém os arquivos JS\r - imagens: Contém as imagens utilizadas em todo o site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielRosell06/Site-Web-Dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielRosell06/Site-Web-Dev/issues"
+  },
+  "homepage": "https://github.com/DanielRosell06/Site-Web-Dev#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
