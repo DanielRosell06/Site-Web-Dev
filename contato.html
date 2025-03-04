@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco</title>
+    <style>
+        :root {
+            --azul-principal: #1a4b8c;
+            --azul-secundario: #3973b4;
+            --azul-claro: #c7d8ef;
+            --amarelo-principal: #ffd700;
+            --amarelo-secundario: #ffeb99;
+            --cinza-claro: #f7f7f7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--cinza-claro);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .cabecalho {
+            background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario));
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 5px solid var(--amarelo-principal);
+        }
+        
+        .cabecalho h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cabecalho p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .coluna {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .cartao {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--azul-principal);
+        }
+        
+        .cartao h2 {
+            color: var(--azul-principal);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--amarelo-principal);
+        }
+        
+        .info-contato {
+            margin-bottom: 2rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .info-icone {
+            background-color: var(--azul-principal);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        
+        .info-texto h3 {
+            font-size: 1.1rem;
+            color: var(--azul-principal);
+            margin-bottom: 0.3rem;
+        }
+        
+        .horario-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed var(--azul-claro);
+        }
+        
+        .formulario input,
+        .formulario textarea,
+        .formulario select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 2px solid var(--azul-claro);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .formulario input:focus,
+        .formulario textarea:focus,
+        .formulario select:focus {
+            border-color: var(--azul-secundario);
+            outline: none;
+        }
+        
+        .formulario label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--azul-principal);
+        }
+        
+        .mapa {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            border: 2px solid var(--azul-claro);
+            overflow: hidden;
+        }
+        
+        .botao {
+            background: linear-gradient(to right, var(--azul-principal), var(--azul-secundario));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            border-bottom: 4px solid var(--amarelo-principal);
+        }
+        
+        .botao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .redes-sociais {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .rede-social {
+            background-color: var(--azul-principal);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .rede-social:hover {
+            background-color: var(--amarelo-principal);
+            color: var(--azul-principal);
+            transform: translateY(-3px);
+        }
+        
+        .destaque {
+            background-color: var(--amarelo-secundario);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--amarelo-principal);
+        }
+        
+        .rodape {
+            background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 5px solid var(--amarelo-principal);
+        }
+        
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            
+            .coluna {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <h1>Fale Conosco</h1>
+        <p>Estamos sempre à disposição para atender você. Entre em contato conosco por qualquer um dos nossos canais de atendimento.</p>
+    </header>
+    
+    <main class="container">
+        <div class="destaque">
+            <p><strong>Atenção:</strong> Nossa equipe está disponível para atendimento de segunda a sexta-feira, das 8h às 18h. Mensagens enviadas fora deste horário serão respondidas no próximo dia útil.</p>
+        </div>
+        
+        <div class="flex-container">
+            <div class="coluna">
+                <div class="cartao">
+                    <h2>Informações de Contato</h2>
+                    
+                    <div class="info-contato">
+                        <div class="info-item">
+                            <div class="info-icone">📍</div>
+                            <div class="info-texto">
+                                <h3>Endereço</h3>
+                                <p>Av. Paulista, 1000 - Bela Vista</p>
+                                <p>São Paulo - SP, 01310-100</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icone">📞</div>
+                            <div class="info-texto">
+                                <h3>Telefone</h3>
+                                <p>(11) 4000-5000</p>
+                                <p>0800 123 4567 (ligação gratuita)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icone">✉️</div>
+                            <div class="info-texto">
+                                <h3>E-mail</h3>
+                                <p>atendimento@empresa.com.br</p>
+                                <p>suporte@empresa.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Horário de Atendimento</h2>
+                    <div class="horarios">
+                        <div class="horario-item">
+                            <span>Segunda à Sexta</span>
+                            <span>08:00 - 18:00</span>
+                        </div>
+                        <div class="horario-item">
+                            <span>Sábado</span>
+                            <span>09:00 - 13:00</span>
+                        </div>
+                        <div class="horario-item">
+                            <span>Domingo</span>
+                            <span>Fechado</span>
+                        </div>
+                        <div class="horario-item">
+                            <span>Feriados</span>
+                            <span>Consultar calendário</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cartao">
+                    <h2>Nossa Localização</h2>
+                    <!-- Imagem de placeholder para o mapa, em uma implementação real seria substituída por um mapa interativo -->
+                    <div class="mapa">
+                        <img src="/api/placeholder/400/300" alt="Mapa da nossa localização" style="width: 100%; height: 100%; object-fit: cover;" />
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <a href="#" class="botao">Ver no Google Maps</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="coluna">
+                <div class="cartao">
+                    <h2>Envie sua Mensagem</h2>
+                    <form class="formulario">
+                        <div>
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                        </div>
+                        
+                        <div>
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+                        </div>
+                        
+                        <div>
+                            <label for="assunto">Assunto</label>
+                            <select id="assunto" required>
+                                <option value="">Selecione o assunto</option>
+                                <option value="duvidas">Dúvidas</option>
+                                <option value="sugestoes">Sugestões</option>
+                                <option value="reclamacoes">Reclamações</option>
+                                <option value="elogios">Elogios</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" placeholder="Digite sua mensagem" rows="6" required></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="botao">Enviar Mensagem</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="cartao">
+                    <h2>Acompanhe nossas Redes Sociais</h2>
+                    <p>Fique por dentro das nossas novidades, promoções e conteúdos exclusivos seguindo nossas redes sociais:</p>
+                    
+                    <div class="redes-sociais">
+                        <a href="#" class="rede-social" title="Facebook">F</a>
+                        <a href="#" class="rede-social" title="Instagram">I</a>
+                        <a href="#" class="rede-social" title="Twitter">T</a>
+                        <a href="#" class="rede-social" title="LinkedIn">L</a>
+                        <a href="#" class="rede-social" title="YouTube">Y</a>
+                    </div>
+                    
+                    <div class="destaque" style="margin-top: 2rem;">
+                        <p><strong>Atendimento via WhatsApp:</strong> (11) 98765-4321</p>
+                        <p>Disponível de segunda a sexta, das 9h às 17h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="rodape">
+        <p>&copy; 2025 Empresa LTDA. Todos os direitos reservados.</p>
+        <p>CNPJ: 00.000.000/0001-00</p>
+    </footer>
+</body>
+</html>
