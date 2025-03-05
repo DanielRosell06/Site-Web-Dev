@@ -2,65 +2,84 @@ const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
 const bodyParser = require('body-parser');
-const helmet = require('helmet'); // Adicionei segurança extra
+const helmet = require('helmet');
 const path = require('path');
+
+// Carregar variáveis de ambiente
+require('dotenv').config();
 
 // Configuração do Express
 const app = express();
 
-// Configurando CORS para receber somente entradas conhecidas
-const configureCORS = () => {
-  const isProduction = process.env.NODE_ENV === 'production';
-  const productionDomain = 'https://site-web-dev.onrender.com';
-  const devOrigins = [
-    'http://localhost:5500',
-    'http://localhost:3000',
-    'http://127.0.0.1:5500'
-  ];
+// ======================================
+// Configurações de Segurança
+// ======================================
+app.use(helmet());
+app.disable('x-powered-by');
 
-  return cors({
-    origin: (origin, callback) => {
-      if (!origin && !isProduction) return callback(null, true); // Permite ferramentas como Postman
-      if (isProduction) {
-        origin === productionDomain 
-          ? callback(null, true)
-          : callback(new Error('Acesso bloqueado por CORS em produção'));
-      } else {
-        devOrigins.includes(origin)
-          ? callback(null, true)
-          : callback(new Error('Acesso bloqueado em desenvolvimento'));
-      }
-    },
-    methods: ['GET', 'POST'],
-    credentials: true
-  });
+// ======================================
+// Configuração do CORS (Desenvolvimento/Produção)
+// ======================================
+const corsOptions = {
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      'https://site-web-dev.onrender.com', // Produção
+      'http://localhost:5500',            // Live Server
+      'http://localhost:3000',            // Frontend local
+      'http://127.0.0.1:5500'             // Alternativa local
+    ];
+
+    const isAllowed = process.env.NODE_ENV === 'production'
+      ? origin === 'https://site-web-dev.onrender.com'
+      : !origin || allowedOrigins.includes(origin);
+
+    isAllowed 
+      ? callback(null, true)
+      : callback(new Error('Bloqueado por política de CORS'));
+  },
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true
 };
 
-// Segurança para produção
-app.use(helmet());
-app.use(cors(configureCORS()));
+app.use(cors(corsOptions));
 
-// Configurações do Body Parser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// ======================================
+// Middlewares
+// ======================================
+app.use(bodyParser.json({ limit: '10kb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '10kb' }));
 
-// Configuração do PostgreSQL
-const pool = new Pool({
+// ======================================
+// Configuração do PostgreSQL (NeonDB)
+// ======================================
+const poolConfig = {
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false
+    rejectUnauthorized: false,
+    require: true
   }
+};
+
+// Log seguro da configuração
+console.log('[NEONDB] Config:', {
+  ...poolConfig,
+  connectionString: poolConfig.connectionString?.replace(/\/\/.*@/, '//[REDACTED]@')
 });
 
-// Conexão e criação de tabela
-(async () => {
-  try {
-    // Teste de conexão
-    await pool.query('SELECT NOW()');
-    console.log('✅ Banco de dados conectado!');
+const pool = new Pool(poolConfig);
 
+// ======================================
+// Inicialização do Banco de Dados
+// ======================================
+const initializeDatabase = async () => {
+  try {
+    // Teste de conexão básica
+    const client = await pool.connect();
+    console.log('✅ Conexão com NeonDB estabelecida!');
+    
     // Criação da tabela
-    await pool.query(`
+    await client.query(`
       CREATE TABLE IF NOT EXISTS Mensagem (
         IdMensagem SERIAL PRIMARY KEY,
         NomeMensagem VARCHAR(100) NOT NULL,
@@ -69,21 +88,44 @@ const pool = new Pool({
         ConteudoMensagem TEXT NOT NULL,
         TelefoneMensagem VARCHAR(20),
         DataEnvio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      )`);
-    console.log('✅ Tabela verificada!');
+      )`
+    );
+    
+    client.release();
+    console.log('✅ Tabela verificada com sucesso!');
 
   } catch (err) {
-    console.error('❌ Erro crítico:', err);
+    console.error('❌ Falha crítica na inicialização:', err);
     process.exit(1);
   }
-})();
+};
 
-// Rota de envio de mensagem
+// Executar inicialização
+initializeDatabase();
+
+// ======================================
+// Rotas
+// ======================================
+
+// Health Check (Obrigatório para Render)
+app.get('/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'online',
+    db: 'connected',
+    environment: process.env.NODE_ENV || 'development'
+  });
+});
+
+// Rota Principal
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'contato.html'));
+});
+
+// Envio de Mensagem
 app.post('/enviar-mensagem', async (req, res) => {
   const requiredFields = ['nome', 'email', 'assunto', 'mensagem'];
-  
-  // Validação aprimorada
   const missingFields = requiredFields.filter(field => !req.body[field]);
+
   if (missingFields.length > 0) {
     return res.status(400).json({
       success: false,
@@ -95,40 +137,49 @@ app.post('/enviar-mensagem', async (req, res) => {
     const result = await pool.query(
       `INSERT INTO Mensagem 
       (NomeMensagem, EmailMensagem, TelefoneMensagem, AssuntoMensagem, ConteudoMensagem) 
-      VALUES ($1, $2, $3, $4, $5) 
+      VALUES ($1, $2, $3, $4, $5)
       RETURNING IdMensagem, DataEnvio`,
       [
         req.body.nome,
         req.body.email,
-        req.body.telefone || null, // Permite null
+        req.body.telefone || null,
         req.body.assunto,
         req.body.mensagem
       ]
     );
 
-    return res.status(201).json({
+    res.status(201).json({
       success: true,
-      message: 'Mensagem enviada!',
+      message: 'Mensagem enviada com sucesso!',
       data: result.rows[0]
     });
 
   } catch (err) {
-    console.error('Erro na API:', err);
-    return res.status(500).json({
+    console.error('📛 Erro no processamento:', err);
+    res.status(500).json({
       success: false,
-      error: 'Erro interno',
-      ...(process.env.NODE_ENV === 'development' && { details: err.message })
+      error: 'Erro interno do servidor',
+      ...(process.env.NODE_ENV !== 'production' && { details: err.message })
     });
   }
 });
 
-// Rota de health check (obrigatória para Render)
-app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'online' });
-});
-
-// Porta dinâmica para produção
+// ======================================
+// Inicialização do Servidor
+// ======================================
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando na porta ${PORT}`);
+  console.log(`
+  ==================================
+  🚀 Servidor iniciado na porta ${PORT}
+  🔒 Modo: ${process.env.NODE_ENV || 'development'}
+  📡 NeonDB: ${process.env.DATABASE_URL ? 'configurado' : 'não configurado!'}
+  ==================================
+  `);
+});
+
+// Tratamento de erros não capturados
+process.on('unhandledRejection', (err) => {
+  console.error('⚠️ Erro não tratado:', err);
+  process.exit(1);
 });
