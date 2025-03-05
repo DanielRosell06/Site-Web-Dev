@@ -15,8 +15,14 @@ function sendMessage() {
     // Formata a mensagem sem espaços desnecessários
     const formattedMessage = `*Nome:* ${name}\n*Telefone:* ${phone}\n*email:* ${gmail}\n*Assunto:* ${subject}\n*Mensagem:* ${message}`;
 
+    // Detecta o ambiente automaticamente
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const apiUrl = isLocal
+        ? 'http://localhost:3000/send-message'  // URL de desenvolvimento
+        : 'https://site-web-dev.onrender.com/send-message';  // URL de produção
+
     // Envia a mensagem para o servidor
-    fetch('/send-message', {
+    fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
