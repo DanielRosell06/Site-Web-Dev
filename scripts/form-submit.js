@@ -10,7 +10,13 @@ document.getElementById('form-mensagem').addEventListener('submit', async (e) =>
     };
 
     try {
-        const response = await fetch('https://site-web-dev.onrender.com/enviar-mensagem', {
+        // Detecta o ambiente automaticamente
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const apiUrl = isLocal
+            ? 'http://localhost:3000/enviar-mensagem'  // URL de desenvolvimento
+            : 'https://site-web-dev.onrender.com/enviar-mensagem';  // URL de produção
+
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
@@ -20,10 +26,11 @@ document.getElementById('form-mensagem').addEventListener('submit', async (e) =>
             alert('Mensagem enviada com sucesso!');
             e.target.reset();
         } else {
-            alert('Erro ao enviar mensagem');
+            const errorData = await response.json();
+            alert(`Erro: ${errorData.error || 'Status ' + response.status}`);
         }
     } catch (error) {
         console.error('Erro:', error);
-        alert('Erro de conexão');
+        alert('Erro de conexão com o servidor');
     }
 });
