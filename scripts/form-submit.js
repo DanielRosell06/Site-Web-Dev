@@ -14,7 +14,7 @@ document.getElementById('form-mensagem').addEventListener('submit', async (e) =>
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       const apiUrl = isLocal
           ? 'http://localhost:3000/enviar-mensagem'  // URL de desenvolvimento
-          : 'https://site-web-dev.onrender.com/enviar-mensagem';  // URL de produção
+          : 'https://site-web-dev-pw1t.onrender.com/enviar-mensagem';  // URL de produção
 
       const response = await fetch(apiUrl, {
           method: 'POST',

@@ -22,8 +22,8 @@ app.disable('x-powered-by');
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedDomains = [
-      'https://verdant-liger-ac44c1.netlify.app', // Frontend Netlify
-      'https://site-web-dev.onrender.com',        // Backend Render
+      'https://peaceful-pavlova-fcd8bc.netlify.app', // Frontend Netlify
+      'https://site-web-dev-pw1t.onrender.com',        // Backend Render
     ];
 
     // Em produção: permite frontend Netlify + backend Render
