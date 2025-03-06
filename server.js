@@ -22,7 +22,7 @@ app.disable('x-powered-by');
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedDomains = [
-      'https://peaceful-pavlova-fcd8bc.netlify.app', // Frontend Netlify
+      'https://nextsize.netlify.app', // Frontend Netlify
       'https://site-web-dev-pw1t.onrender.com',        // Backend Render
     ];
 
