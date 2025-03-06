@@ -21,26 +21,39 @@ app.disable('x-powered-by');
 // ======================================
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = [
-      'https://netlify.app',
+    const productionFrontend = 'https://verdant-liger-ac44c1.netlify.app';
+    const productionBackend = 'https://site-web-dev.onrender.com';
+    const devOrigins = [
+      productionFrontend,
+      productionBackend,
       'http://localhost:5500',
       'http://localhost:3000',
       'http://127.0.0.1:5500'
     ];
 
+    // Permite requisições sem Origin apenas em desenvolvimento
+    if (!origin) {
+      return process.env.NODE_ENV === 'development' 
+        ? callback(null, true) 
+        : callback(new Error('Requisições sem origem são bloqueadas em produção'));
+    }
+
+    // Remove trailing slash e caminhos da origem
+    const cleanOrigin = origin.replace(/\/+$/, '').split('/')[2]; // Extrai apenas o domínio
+
     const isAllowed = process.env.NODE_ENV === 'production'
-      ? origin === 'https://netlify.app'
-      : !origin || allowedOrigins.includes(origin);
+      ? cleanOrigin === 'verdant-liger-ac44c1.netlify.app' // Domínio principal do front
+      : devOrigins.some(domain => cleanOrigin === new URL(domain).hostname);
 
     isAllowed 
       ? callback(null, true)
-      : callback(new Error('Bloqueado por política de CORS'));
+      : callback(new Error(`Acesso bloqueado: ${origin} não permitido`));
   },
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-  credentials: true
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 204
 };
-
 app.use(cors(corsOptions));
 
 // ======================================
