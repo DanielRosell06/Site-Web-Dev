@@ -21,36 +21,29 @@ app.disable('x-powered-by');
 // ======================================
 const corsOptions = {
   origin: (origin, callback) => {
-    const productionFrontend = 'https://verdant-liger-ac44c1.netlify.app';
-    const productionBackend = 'https://site-web-dev.onrender.com';
-    const devOrigins = [
-      productionFrontend,
-      productionBackend,
-      'http://localhost:5500',
-      'http://localhost:3000',
-      'http://127.0.0.1:5500'
+    const allowedDomains = [
+      'https://verdant-liger-ac44c1.netlify.app', // Frontend Netlify
+      'https://site-web-dev.onrender.com',        // Backend Render
+      'http://localhost:5500',                   // Dev frontend
+      'http://localhost:3000'                    // Dev backend
     ];
 
-    // Permite requisições sem Origin apenas em desenvolvimento
-    if (!origin) {
-      return process.env.NODE_ENV === 'development' 
-        ? callback(null, true) 
-        : callback(new Error('Requisições sem origem são bloqueadas em produção'));
+    // Em produção: permite frontend Netlify + backend Render
+    if (process.env.NODE_ENV === 'production') {
+      const isAllowed = allowedDomains
+        .map(domain => new URL(domain).hostname) // Extrai apenas o domínio
+        .includes(new URL(origin).hostname);
+
+      return isAllowed 
+        ? callback(null, true)
+        : callback(new Error(`Origem bloqueada: ${origin}`));
     }
 
-    // Remove trailing slash e caminhos da origem
-    const cleanOrigin = origin.replace(/\/+$/, '').split('/')[2]; // Extrai apenas o domínio
-
-    const isAllowed = process.env.NODE_ENV === 'production'
-      ? cleanOrigin === 'verdant-liger-ac44c1.netlify.app' // Domínio principal do front
-      : devOrigins.some(domain => cleanOrigin === new URL(domain).hostname);
-
-    isAllowed 
-      ? callback(null, true)
-      : callback(new Error(`Acesso bloqueado: ${origin} não permitido`));
+    // Em desenvolvimento: permite tudo
+    callback(null, true);
   },
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type'],
   credentials: true,
   optionsSuccessStatus: 204
 };
