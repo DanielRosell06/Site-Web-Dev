@@ -24,8 +24,6 @@ const corsOptions = {
     const allowedDomains = [
       'https://verdant-liger-ac44c1.netlify.app', // Frontend Netlify
       'https://site-web-dev.onrender.com',        // Backend Render
-      'http://localhost:5500',                   // Dev frontend
-      'http://localhost:3000'                    // Dev backend
     ];
 
     // Em produção: permite frontend Netlify + backend Render
