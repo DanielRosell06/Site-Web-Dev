@@ -1,10 +1,11 @@
-function sendMessage() {
+document.getElementById('form-mensagem').addEventListener('submit', async (e) => {
+    e.preventDefault();
     // Coleta os valores dos campos
-    const name = document.getElementById('nome').value;
-    const phone = document.getElementById('telefone').value;
-    const gmail = document.getElementById('email').value;
-    const subject = document.getElementById('assunto').value;
-    const message = document.getElementById('mensagem').value;
+    const name = e.target.nome.value;
+    const phone = e.target.telefone.value;
+    const gmail = e.target.email.value;
+    const subject = e.target.assunto.value;
+    const message = e.target.mensagem.value;
 
     // Valida se todos os campos estão preenchidos
     if (!name || !phone || !subject || !message) {
@@ -41,4 +42,4 @@ function sendMessage() {
         alert('Erro na comunicação com o servidor!');
         console.error(err);
     });
-}
+})
