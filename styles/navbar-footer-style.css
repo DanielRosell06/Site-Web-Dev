@@ -215,6 +215,7 @@
     color: var(--primary-color);
     margin-bottom: 20px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .footer-contato p {
