@@ -28,7 +28,7 @@
     <script src="scripts/cabecalho.js" defer></script>
     <script src="scripts/contato.js" defer></script>
     <script src="scripts/form-submit.js" defer></script>
-    
+
 </head>
 
 <body>
@@ -39,7 +39,7 @@
                 <h1 onclick="window.location.href='index.html';">NextSize</h1>
             </div>
             <nav class="navbar-text">
-                <a href="index.html" class="nav-link ">
+                <a href="index.html" class="nav-link">
                     <h2>Home</h2>
                 </a>
                 <a href="index.html#repertorio-section" class="nav-link">
@@ -48,7 +48,7 @@
                 <a href="index.html#servicos-section" class="nav-link">
                     <h2>Serviços</h2>
                 </a>
-                <a href="contato.html" class="nav-link active mobile ">
+                <a href="contato.html" class="nav-link active mobile">
                     <h2>Contato</h2>
                 </a>
             </nav>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="info-text">
                             <h3>Endereço</h3>
-                            <p>Rua Paschoal Marmo 1888 - Jardim nova itália</p>
+                            <p>Rua Paschoal Marmo 1888 - Jardim Nova Itália</p>
                             <p>Limeira, SP, 13484-332 </p>
                         </div>
                     </div>
@@ -108,17 +108,39 @@
                         </div>
                         <div class="info-text">
                             <h3>E-mail</h3>
-                            <p>unicampwebsitesdevelopment@gmail.com</p>
-                            <p>silva.kaue0104@gmail.com</p>
+                            <p>Clique <a href="#" id="gmailLink" class="link-email">aqui</a> para entrar em contato via email</p>
+
+                            <script>
+                                document.getElementById('gmailLink').addEventListener('click', function (e) {
+                                    e.preventDefault();
+                                    var email = 'unicampwebsitesdevelopment@gmail.com';
+                                    // URL para iOS e desktop: tenta abrir o app Gmail
+                                    var schemeURL = 'googlegmail://co?to=' + email;
+                                    // Caso o app não esteja instalado, redireciona para a versão web
+                                    var fallbackURL = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + email;
+
+                                    // Detecta se o dispositivo é Android
+                                    var isAndroid = /Android/i.test(navigator.userAgent);
+
+                                    if (isAndroid) {
+                                        // No Android, usa o mailto que já está funcionando bem
+                                        window.location.href = 'mailto:' + email;
+                                    } else {
+                                        // Para iOS e desktops, tenta abrir o Gmail via URL scheme
+                                        window.location.href = schemeURL;
+                                        // Caso o app não esteja instalado, após 500ms redireciona para a versão web
+                                        setTimeout(function () {
+                                            window.location.href = fallbackURL;
+                                        }, 500);
+                                    }
+                                });
+                            </script>
                         </div>
                     </div>
                     <h2>Horário de Atendimento</h2>
                     <div class="info-item">
                         <div class="info-text">
                             <p>Segunda à Sexta: 08:00 - 18:00</p>
-                            <p>Sábado: 09:00 - 13:00</p>
-                            <p>Domingo: Fechado</p>
-                            <p>Feriados: Consultar calendário</p>
                         </div>
                     </div>
                 </div>
@@ -126,12 +148,13 @@
                     <h2>Nossa Localização</h2>
                     <div class="map">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.462057085463!2d-47.426500925450895!3d-22.56181557949937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8806cf1fc392d%3A0xf7f5dbc6128be719!2sFaculdade%20de%20Tecnologia%20da%20Universidade%20Estadual%20de%20Campinas%20(FT%2FUNICAMP)!5e0!3m2!1spt-BR!2sbr!4v1741099658264!5m2!1spt-BR!2sbr"
+                            src="https://maps.google.com/maps?q=Rua%20Paschoal%20Marmo%201888%20-%20Jardim%20Nova%20It%C3%A1lia,%20Limeira,%20SP,%2013484-332&output=embed"
                             width="517" height="310" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div style="text-align: center;">
-                        <a href="https://maps.app.goo.gl/tGHoedYy3Bd8q1x76" class="botao">Ver no Google Maps</a>
+                        <a href="https://maps.google.com/maps?q=Rua%20Paschoal%20Marmo%201888%20-%20Jardim%20Nova%20It%C3%A1lia,%20Limeira,%20SP,%2013484-332"
+                            class="botao" target="_blank">Ver no Google Maps</a>
                     </div>
                 </div>
             </div>
@@ -183,7 +206,7 @@
                     </div>
                     <div class="highlight" style="margin-top: 20px;">
                         <p><strong>Atendimento via WhatsApp:</strong> (11) 98765-4321</p>
-                        <p>Disponível de segunda a sexta, das 9h às 17h</p>
+                        <p>Disponível de segunda a sexta, das 08h às 18h</p>
                     </div>
                 </div>
             </div>

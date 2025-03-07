@@ -37,6 +37,12 @@ main {
     padding: 120px 20px 0px;
 }
 
+@media (max-width: 770px) {
+    main {
+        padding: 200px 20px 0px;
+    }
+}
+
 .page-title {
     text-align: center;
     margin-bottom: 40px;
@@ -102,8 +108,8 @@ main {
 .info-icon {
     background-color: var(--accent-color);
     color: var(--white);
-    width: 40px;
-    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -116,6 +122,10 @@ main {
     font-size: 16px;
     margin-bottom: 5px;
     color: var(--accent-color);
+}
+
+.link-email {
+    color: rgb(4, 17, 189);
 }
 
 /* Mapa */
