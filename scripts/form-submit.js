@@ -1,3 +1,4 @@
+let elementoConfirmacao = document.getElementById('confirmacao-mensagem')
 document.getElementById('form-mensagem').addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -23,11 +24,11 @@ document.getElementById('form-mensagem').addEventListener('submit', async (e) =>
       });
 
       if (response.ok) {
-          alert('Mensagem enviada com sucesso!');
+          elementoConfirmacao.classList.remove('confirmacao-mensagem-invisivel')
           e.target.reset();
       } else {
           const errorData = await response.json();
-          alert(`Erro: ${errorData.error || 'Status ' + response.status}`);
+          alert(`Houve um erro ao enviar a sua mensagem. Entre em contato com a gente de outra maneira!`);
       }
   } catch (error) {
       console.error('Erro:', error);

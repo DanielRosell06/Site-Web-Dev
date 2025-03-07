@@ -33,9 +33,9 @@ document.getElementById('form-mensagem').addEventListener('submit', async (e) =>
     .then(response => response.json())
     .then(data => {
         if (data.status === 'success') {
-            alert('Mensagem enviada com sucesso!');
+            console.log('Mensagem enviada com sucesso!');
         } else {
-            alert('Erro ao enviar mensagem: ' + (data.message || 'Tente novamente.'));
+            console.log('Erro ao enviar mensagem: ' + (data.message || 'Tente novamente.'));
         }
     })
     .catch(err => {

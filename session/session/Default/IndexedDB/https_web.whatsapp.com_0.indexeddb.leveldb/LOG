@@ -1,40 +1,47 @@
-2025/03/06-08:39:49.166 21f4 Reusing MANIFEST C:\Users\Davi\OneDrive\Documentos\VS Code\Sites\Site Dev Web\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/03/06-08:39:49.167 21f4 Recovering log #491
-2025/03/06-08:39:49.467 21f4 Reusing old log C:\Users\Davi\OneDrive\Documentos\VS Code\Sites\Site Dev Web\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000491.log 
-2025/03/06-08:39:55.954 1bf4 Level-0 table #503: started
-2025/03/06-08:39:56.105 1bf4 Level-0 table #503: 501424 bytes OK
-2025/03/06-08:39:56.107 1bf4 Delete type=0 #491
-2025/03/06-08:39:56.109 1bf4 Manual compaction at level-0 from '\x00!\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00"\x00\x00\x00' @ 0 : 0; will stop at '\x00!\x00\x00\x05' @ 2252484 : 1
-2025/03/06-08:39:56.110 1bf4 Compacting 1@0 + 1@1 files
-2025/03/06-08:39:56.314 1bf4 Generated table #504@0: 10054 keys, 203737 bytes
-2025/03/06-08:39:56.344 1bf4 Generated table #505@0: 8010 keys, 141833 bytes
-2025/03/06-08:39:56.344 1bf4 Compacted 1@0 + 1@1 files => 345570 bytes
-2025/03/06-08:39:56.344 1bf4 compacted to: files[ 0 2 15 0 0 0 0 ]
-2025/03/06-08:39:56.345 1bf4 Delete type=2 #503
-2025/03/06-08:39:56.346 1bf4 Manual compaction at level-0 from '\x00!\x00\x00\x05' @ 2252484 : 1 .. '\x00"\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/03/06-08:40:01.271 1bf4 Compacting 1@1 + 10@2 files
-2025/03/06-08:40:01.757 1bf4 Generated table #506@1: 55077 keys, 2231535 bytes
-2025/03/06-08:40:02.047 1bf4 Generated table #507@1: 9483 keys, 2154582 bytes
-2025/03/06-08:40:02.220 1bf4 Generated table #508@1: 2984 keys, 2156461 bytes
-2025/03/06-08:40:02.342 1bf4 Generated table #509@1: 3013 keys, 2157655 bytes
-2025/03/06-08:40:02.519 1bf4 Generated table #510@1: 24750 keys, 2232466 bytes
-2025/03/06-08:40:02.806 1bf4 Generated table #511@1: 25317 keys, 2214306 bytes
-2025/03/06-08:40:02.900 1bf4 Generated table #512@1: 6580 keys, 2126624 bytes
-2025/03/06-08:40:03.353 1bf4 Generated table #513@1: 72676 keys, 2214206 bytes
-2025/03/06-08:40:03.805 1bf4 Generated table #514@1: 107400 keys, 2258731 bytes
-2025/03/06-08:40:04.187 1bf4 Generated table #515@1: 107300 keys, 2260563 bytes
-2025/03/06-08:40:04.193 1bf4 Generated table #516@1: 719 keys, 15917 bytes
-2025/03/06-08:40:04.193 1bf4 Compacted 1@1 + 10@2 files => 22023046 bytes
-2025/03/06-08:40:04.195 1bf4 compacted to: files[ 0 1 16 0 0 0 0 ]
-2025/03/06-08:40:04.195 1bf4 Delete type=2 #485
-2025/03/06-08:40:04.195 1bf4 Delete type=2 #486
-2025/03/06-08:40:04.196 1bf4 Delete type=2 #487
-2025/03/06-08:40:04.196 1bf4 Delete type=2 #488
-2025/03/06-08:40:04.196 1bf4 Delete type=2 #494
-2025/03/06-08:40:04.196 1bf4 Delete type=2 #495
-2025/03/06-08:40:04.196 1bf4 Delete type=2 #496
-2025/03/06-08:40:04.196 1bf4 Delete type=2 #497
-2025/03/06-08:40:04.196 1bf4 Delete type=2 #498
-2025/03/06-08:40:04.197 1bf4 Delete type=2 #499
-2025/03/06-08:40:04.197 1bf4 Delete type=2 #500
-2025/03/06-08:40:04.197 1bf4 Delete type=2 #504
+2025/03/06-22:28:11.079 4814 Reusing MANIFEST C:\Users\Davi\OneDrive\Documentos\VS Code\Sites\Site Dev Web\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/06-22:28:11.080 4814 Recovering log #589
+2025/03/06-22:28:11.386 4814 Reusing old log C:\Users\Davi\OneDrive\Documentos\VS Code\Sites\Site Dev Web\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000589.log 
+2025/03/06-22:28:11.387 4814 Delete type=2 #583
+2025/03/06-22:28:11.387 4814 Delete type=2 #584
+2025/03/06-22:28:11.387 4814 Delete type=2 #585
+2025/03/06-22:28:11.387 4814 Delete type=2 #586
+2025/03/06-22:28:11.387 4814 Delete type=2 #587
+2025/03/06-22:28:11.387 4814 Delete type=2 #588
+2025/03/06-22:28:11.387 4814 Delete type=2 #590
+2025/03/06-22:28:14.071 2b4 Level-0 table #599: started
+2025/03/06-22:28:14.215 2b4 Level-0 table #599: 887129 bytes OK
+2025/03/06-22:28:14.219 2b4 Delete type=0 #589
+2025/03/06-22:28:14.220 2b4 Manual compaction at level-0 from '\x00#\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00$\x00\x00\x00' @ 0 : 0; will stop at '\x00#\x00\x00\x05' @ 2614463 : 1
+2025/03/06-22:28:14.220 2b4 Compacting 1@0 + 1@1 files
+2025/03/06-22:28:14.342 2b4 Generated table #600@0: 16971 keys, 387875 bytes
+2025/03/06-22:28:14.374 2b4 Generated table #601@0: 8064 keys, 142805 bytes
+2025/03/06-22:28:14.374 2b4 Compacted 1@0 + 1@1 files => 530680 bytes
+2025/03/06-22:28:14.376 2b4 compacted to: files[ 0 2 18 0 0 0 0 ]
+2025/03/06-22:28:14.376 2b4 Delete type=2 #599
+2025/03/06-22:28:14.378 2b4 Manual compaction at level-0 from '\x00#\x00\x00\x05' @ 2614463 : 1 .. '\x00$\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/03/06-22:28:18.191 410c Compacting 1@1 + 11@2 files
+2025/03/06-22:28:18.612 410c Generated table #602@1: 54778 keys, 2230390 bytes
+2025/03/06-22:28:18.789 410c Generated table #603@1: 14812 keys, 2167279 bytes
+2025/03/06-22:28:18.896 410c Generated table #604@1: 2924 keys, 2155481 bytes
+2025/03/06-22:28:19.008 410c Generated table #605@1: 3062 keys, 2195149 bytes
+2025/03/06-22:28:19.201 410c Generated table #606@1: 22882 keys, 2225244 bytes
+2025/03/06-22:28:19.408 410c Generated table #607@1: 27036 keys, 2224034 bytes
+2025/03/06-22:28:19.524 410c Generated table #608@1: 6885 keys, 2127325 bytes
+2025/03/06-22:28:19.786 410c Generated table #609@1: 64689 keys, 2201336 bytes
+2025/03/06-22:28:20.219 410c Generated table #610@1: 107481 keys, 2258640 bytes
+2025/03/06-22:28:20.491 410c Generated table #611@1: 94191 keys, 1979206 bytes
+2025/03/06-22:28:20.491 410c Compacted 1@1 + 11@2 files => 21764084 bytes
+2025/03/06-22:28:20.493 410c compacted to: files[ 0 1 17 0 0 0 0 ]
+2025/03/06-22:28:20.494 410c Delete type=2 #528
+2025/03/06-22:28:20.494 410c Delete type=2 #529
+2025/03/06-22:28:20.494 410c Delete type=2 #530
+2025/03/06-22:28:20.494 410c Delete type=2 #531
+2025/03/06-22:28:20.494 410c Delete type=2 #536
+2025/03/06-22:28:20.494 410c Delete type=2 #543
+2025/03/06-22:28:20.494 410c Delete type=2 #591
+2025/03/06-22:28:20.494 410c Delete type=2 #592
+2025/03/06-22:28:20.494 410c Delete type=2 #593
+2025/03/06-22:28:20.494 410c Delete type=2 #594
+2025/03/06-22:28:20.494 410c Delete type=2 #595
+2025/03/06-22:28:20.494 410c Delete type=2 #596
+2025/03/06-22:28:20.494 410c Delete type=2 #600
