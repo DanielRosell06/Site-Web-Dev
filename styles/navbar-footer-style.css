@@ -84,6 +84,11 @@
     width: 100%;
 }
 
+.mobile{
+    display: none;
+    opacity: 0;
+}
+
 .navbar__contato {
     display: flex;
     flex-direction: row;
@@ -350,8 +355,20 @@
 }
 
 @media (max-width: 576px) {
+    #cabecalho {
+        height: 20vh;
+    }
     .navbar-content {
         flex-direction: column;
         gap: 20px;
+    }
+    .navbar__contato{
+        display: none;
+        opacity: 0;
+    }
+
+    .mobile{
+        display: contents;
+        opacity: 1;
     }
 }
