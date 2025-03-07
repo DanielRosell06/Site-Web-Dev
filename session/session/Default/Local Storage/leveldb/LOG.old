@@ -1,6 +1,3 @@
-2025/03/06-02:01:43.953 3220 Reusing MANIFEST C:\Users\Davi\OneDrive\Documentos\VS Code\Sites\Site Dev Web\session\session\Default\Local Storage\leveldb/MANIFEST-000001
-2025/03/06-02:01:43.956 3220 Recovering log #3
-2025/03/06-02:01:43.959 3220 Reusing old log C:\Users\Davi\OneDrive\Documentos\VS Code\Sites\Site Dev Web\session\session\Default\Local Storage\leveldb/000003.log 
-2025/03/06-02:03:46.983 3220 Level-0 table #5: started
-2025/03/06-02:03:47.007 3220 Level-0 table #5: 18847 bytes OK
-2025/03/06-02:03:47.013 3220 Delete type=0 #3
+2025/03/06-22:19:02.266 3384 Reusing MANIFEST C:\Users\Davi\OneDrive\Documentos\VS Code\Sites\Site Dev Web\session\session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/03/06-22:19:02.276 3384 Recovering log #4
+2025/03/06-22:19:02.276 3384 Reusing old log C:\Users\Davi\OneDrive\Documentos\VS Code\Sites\Site Dev Web\session\session\Default\Local Storage\leveldb/000004.log 
